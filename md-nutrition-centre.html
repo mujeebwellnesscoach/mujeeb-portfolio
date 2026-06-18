@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Nutrition Centre | Mahammed Mujeeb – Guntur's Trusted Wellness Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1B3A2D;
+    --green-mid: #2A5240;
+    --green-bright: #006400;
+    --gold: #C9A84C;
+    --gold-dark: #B8962E;
+    --cream: #F8F4EE;
+    --cream-dark: #EDE8E0;
+    --white: #FFFFFF;
+    --text-dark: #1a1a1a;
+    --text-muted: #5a6672;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-dark); }
+
+  /* ── TOP BANNER ── */
+  .top-banner {
+    background: var(--gold);
+    color: var(--green-deep);
+    text-align:center;
+    padding: 8px 16px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.4px;
+  }
+  .top-banner a {
+    background: var(--green-deep);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-left:12px;
+    font-size:12px;
+    font-weight:700;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top:0; z-index:999;
+    background: var(--white);
+    border-bottom: 1px solid rgba(201,168,76,.25);
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 0 24px;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(27,58,45,.08);
+  }
+  .nav-logo { display:flex; align-items:center; gap:10px; }
+  .nav-logo-circle {
+    width:42px; height:42px;
+    background: var(--green-deep);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px; font-weight:700;
+    color: var(--gold);
+    letter-spacing:1px;
+  }
+  .nav-logo-text { line-height:1.2; }
+  .nav-logo-text .brand { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:700; color:var(--green-deep); }
+  .nav-logo-text .sub { font-size:10px; color:var(--text-muted); letter-spacing:.5px; text-transform:uppercase; }
+  .nav-links { display:flex; gap:6px; list-style:none; }
+  .nav-links a {
+    text-decoration:none; color:var(--green-deep);
+    font-size:13.5px; font-weight:500;
+    padding: 6px 12px; border-radius:6px;
+    transition: background .2s, color .2s;
+  }
+  .nav-links a:hover { background:var(--cream); color:var(--gold-dark); }
+  .nav-cta {
+    background: var(--green-deep); color: var(--gold) !important;
+    border-radius: 24px !important; padding: 8px 20px !important;
+    font-weight:600 !important;
+  }
+  .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  #home {
+    background: var(--green-deep);
+    min-height: 92vh;
+    display:flex; align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding: 80px 24px 60px;
+  }
+  #home::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(201,168,76,.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,.07) 0%, transparent 60%);
+  }
+  .hero-inner {
+    max-width:960px; margin:0 auto;
+    position:relative; z-index:2;
+    text-align:center;
+  }
+  .hero-eyebrow {
+    display:inline-block;
+    font-size:12px; font-weight:600;
+    letter-spacing:2px; text-transform:uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,.4);
+    padding: 6px 18px; border-radius:20px;
+    margin-bottom:28px;
+  }
+  .hero-title {
+    font-family:'Cormorant Garamond',serif;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight:600; line-height:1.05;
+    color: var(--white);
+    margin-bottom:12px;
+  }
+  .hero-title em { color:var(--gold); font-style:italic; }
+  .hero-tagline {
+    font-size:15px; color: rgba(255,255,255,.75);
+    max-width:560px; margin:0 auto 36px;
+    line-height:1.7;
+  }
+  .hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:56px; }
+  .btn-primary {
+    background:var(--gold); color:var(--green-deep);
+    padding:14px 32px; border-radius:32px;
+    font-weight:700; font-size:14px;
+    text-decoration:none; letter-spacing:.3px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(201,168,76,.35);
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(201,168,76,.5); }
+  .btn-outline {
+    border:1.5px solid rgba(255,255,255,.35);
+    color:var(--white); padding:13px 28px; border-radius:32px;
+    font-weight:500; font-size:14px; text-decoration:none;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-outline:hover { border-color:var(--gold); background:rgba(201,168,76,.08); }
+  .hero-stats {
+    display:flex; justify-content:center; gap:40px; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:32px;
+  }
+  .stat { text-align:center; }
+  .stat-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px; font-weight:700;
+    color:var(--gold); line-height:1;
+  }
+  .stat-label { font-size:11px; color:rgba(255,255,255,.55); letter-spacing:1px; text-transform:uppercase; margin-top:4px; }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding:80px 24px; }
+  .section-inner { max-width:1000px; margin:0 auto; }
+  .section-eyebrow {
+    font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold-dark); margin-bottom:12px;
+  }
+  .section-title {
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(30px,5vw,46px); font-weight:700;
+    color:var(--green-deep); line-height:1.15;
+    margin-bottom:14px;
+  }
+  .section-desc { color:var(--text-muted); line-height:1.8; max-width:600px; font-size:15px; }
+  .divider { width:48px; height:3px; background:var(--gold); margin:18px 0 0; border-radius:2px; }
+
+  /* ── SERVICES ── */
+  #services { background:var(--white); }
+  .services-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:20px; margin-top:44px;
+  }
+  .service-card {
+    background:var(--cream);
+    border:1px solid var(--cream-dark);
+    border-radius:16px;
+    padding:28px 24px;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    cursor:default;
+  }
+  .service-card:hover {
+    transform:translateY(-4px);
+    box-shadow:0 12px 32px rgba(27,58,45,.1);
+    border-color:var(--gold);
+  }
+  .service-icon {
+    width:52px; height:52px;
+    background:var(--green-deep);
+    border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; margin-bottom:18px;
+  }
+  .service-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px; font-weight:700;
+    color:var(--green-deep); margin-bottom:8px;
+  }
+  .service-desc { font-size:13.5px; color:var(--text-muted); line-height:1.7; }
+
+  /* ── ABOUT ── */
+  #about { background:var(--cream); }
+  .about-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px; align-items:center;
+    margin-top:0;
+  }
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr;}}
+  .about-photo-wrap {
+    position:relative;
+  }
+  .about-photo-bg {
+    background: var(--green-deep);
+    border-radius:24px;
+    aspect-ratio:4/5;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    position:relative;
+  }
+  .about-photo-bg::after {
+    content:'';
+    position:absolute; bottom:0; left:0; right:0; height:40%;
+    background:linear-gradient(transparent, rgba(27,58,45,.6));
+  }
+  .about-initials {
+    font-family:'Cormorant Garamond',serif;
+    font-size:100px; font-weight:700;
+    color:rgba(201,168,76,.25);
+    letter-spacing:-4px;
+  }
+  .about-badge {
+    position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:var(--green-deep);
+    padding:8px 20px; border-radius:20px;
+    font-size:12px; font-weight:700; letter-spacing:.5px;
+    white-space:nowrap; z-index:2;
+  }
+  .about-content { }
+  .about-content .section-title { margin-top:6px; }
+  .credential-list { list-style:none; margin-top:22px; display:flex; flex-direction:column; gap:10px; }
+  .credential-list li {
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:14px; color:var(--text-dark); line-height:1.6;
+  }
+  .credential-list li::before {
+    content:'✦'; color:var(--gold); font-size:10px; margin-top:4px; flex-shrink:0;
+  }
+
+  /* ── PROGRAMS ── */
+  #programs { background:var(--green-deep); }
+  #programs .section-title { color:var(--white); }
+  #programs .section-eyebrow { color:var(--gold); }
+  #programs .section-desc { color:rgba(255,255,255,.65); }
+  #programs .divider { background:rgba(201,168,76,.5); }
+  .programs-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px; margin-top:44px;
+  }
+  .program-card {
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(201,168,76,.2);
+    border-radius:16px; padding:28px;
+    transition:.25s;
+  }
+  .program-card:hover { background:rgba(201,168,76,.08); border-color:var(--gold); }
+  .program-tag {
+    font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:14px;
+  }
+  .program-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px; font-weight:700; color:var(--white);
+    margin-bottom:10px; line-height:1.2;
+  }
+  .program-desc { font-size:13.5px; color:rgba(255,255,255,.6); line-height:1.7; margin-bottom:18px; }
+  .program-features { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .program-features li { font-size:12.5px; color:rgba(255,255,255,.55); padding-left:14px; position:relative; }
+  .program-features li::before { content:'→'; position:absolute; left:0; color:var(--gold); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background:var(--white); }
+  .testi-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px; margin-top:44px;
+  }
+  .testi-card {
+    background:var(--cream); border:1px solid var(--cream-dark);
+    border-radius:16px; padding:28px;
+    position:relative;
+  }
+  .testi-quote {
+    font-family:'Cormorant Garamond',serif;
+    font-size:52px; line-height:.8; color:var(--gold);
+    position:absolute; top:16px; left:22px; opacity:.4;
+  }
+  .testi-text { font-size:14px; color:var(--text-dark); line-height:1.75; margin-top:20px; font-style:italic; }
+  .testi-author { margin-top:18px; }
+  .testi-name { font-weight:700; font-size:14px; color:var(--green-deep); }
+  .testi-detail { font-size:12px; color:var(--text-muted); }
+  .stars { color:var(--gold); font-size:13px; margin-top:6px; }
+
+  /* ── CONTACT ── */
+  #contact { background:var(--cream); }
+  .contact-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:44px;
+  }
+  @media(max-width:720px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info { display:flex; flex-direction:column; gap:18px; }
+  .contact-item {
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--white); border-radius:12px; padding:18px;
+    border:1px solid var(--cream-dark);
+  }
+  .contact-icon {
+    width:42px; height:42px; border-radius:10px;
+    background:var(--green-deep); display:flex; align-items:center; justify-content:center;
+    font-size:18px; flex-shrink:0;
+  }
+  .contact-label { font-size:11px; font-weight:600; color:var(--text-muted); letter-spacing:.8px; text-transform:uppercase; }
+  .contact-value { font-size:14.5px; font-weight:500; color:var(--green-deep); margin-top:2px; }
+  .contact-form { display:flex; flex-direction:column; gap:14px; }
+  .form-group input, .form-group textarea {
+    width:100%; padding:13px 16px;
+    border:1.5px solid var(--cream-dark);
+    border-radius:10px; background:var(--white);
+    font-family:'DM Sans',sans-serif; font-size:14px;
+    color:var(--text-dark);
+    outline:none; transition:border-color .2s;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color:var(--gold); }
+  .form-group textarea { height:110px; resize:vertical; }
+  .form-submit {
+    background:var(--green-deep); color:var(--gold);
+    border:none; border-radius:32px;
+    padding:14px 36px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:'DM Sans',sans-serif;
+    letter-spacing:.3px;
+    transition:.2s;
+    align-self:flex-start;
+  }
+  .form-submit:hover { background:var(--gold-dark); color:var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--green-deep);
+    padding:48px 24px 28px;
+    text-align:center;
+  }
+  .footer-logo {
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px; font-weight:700;
+    color:var(--gold); margin-bottom:6px;
+  }
+  .footer-tagline { font-size:12px; color:rgba(255,255,255,.4); letter-spacing:2px; text-transform:uppercase; margin-bottom:28px; }
+  .footer-links { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:28px; }
+  .footer-links a { color:rgba(255,255,255,.55); font-size:13px; text-decoration:none; transition:.15s; }
+  .footer-links a:hover { color:var(--gold); }
+  .footer-copy { font-size:12px; color:rgba(255,255,255,.3); border-top:1px solid rgba(255,255,255,.08); padding-top:20px; }
+
+  /* ── MOBILE ── */
+  @media(max-width:600px){
+    nav { padding:0 14px; }
+    .nav-links { display:none; }
+    .hero-stats { gap:24px; }
+    section { padding:60px 16px; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition:.55s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  🌿 Guntur's Trusted Wellness Coach &nbsp;·&nbsp; Free Consultation Available &nbsp;·&nbsp; Start Today
+  <a href="#contact">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-circle">MD</div>
+    <div class="nav-logo-text">
+      <div class="brand">MD Nutrition Centre</div>
+      <div class="sub">Wellness &amp; Nutrition Coaching</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Guntur's Trusted Wellness Coach</div>
+    <h1 class="hero-title">Transform <em>Your Life.</em></h1>
+    <p class="hero-tagline">Personalized nutrition programs, weight management, and holistic wellness coaching — tailored for you in Guntur, Andhra Pradesh.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Free Consultation</a>
+      <a href="#programs" class="btn-outline">Explore Programs</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Clients Transformed</div></div>
+      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Personalized Plans</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">— What We Offer</p>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-desc">Science-backed nutrition and wellness programs designed around your unique body, culture, and lifestyle.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">⚖️</div>
+        <div class="service-name">Weight Management</div>
+        <p class="service-desc">Science-backed plans for healthy, sustainable weight loss and weight gain — built around your goals and metabolism.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🥗</div>
+        <div class="service-name">Nutrition Coaching</div>
+        <p class="service-desc">Personalized meal plans aligned with your culture, food preferences, and daily lifestyle.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🌿</div>
+        <div class="service-name">Hormonal Health</div>
+        <p class="service-desc">Targeted nutrition strategies for PCOD, thyroid, hormonal imbalance, and women's wellness.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Wellness Coaching</div>
+        <p class="service-desc">Holistic approach to energy, sleep quality, stress management, and peak daily performance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🩺</div>
+        <div class="service-name">Chronic Condition Nutrition</div>
+        <p class="service-desc">Therapeutic nutrition plans for diabetes, hypertension, kidney health, and chronic lifestyle conditions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💆</div>
+        <div class="service-name">Gut & Skin Health</div>
+        <p class="service-desc">Dietary solutions for digestive wellness, skin conditions, and inflammatory health concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo-bg">
+          <div class="about-initials">MM</div>
+          <div class="about-badge">Wellness Coach &amp; Speaker</div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <p class="section-eyebrow">— About</p>
+        <h2 class="section-title">Mahammed Mujeeb</h2>
+        <p class="section-desc" style="max-width:100%;">Founder of MD Nutrition Centre, Guntur's trusted Wellness Coach &amp; Nutrition Consultant. With 2+ years of hands-on experience transforming 100+ lives across Andhra Pradesh &amp; Telangana, Mujeeb combines evidence-based nutrition science with deep cultural understanding to deliver plans that truly work.</p>
+        <p class="section-desc" style="max-width:100%;margin-top:14px;">A certified speaker and community wellness advocate, he has presented at family events, corporate sessions, and health drives across the region — making professional nutrition guidance accessible to everyone.</p>
+        <ul class="credential-list">
+          <li>Certified Nutrition &amp; Wellness Coach</li>
+          <li>Specialization in PCOD, Thyroid &amp; Hormonal Health</li>
+          <li>Diabetes &amp; Chronic Condition Nutrition Therapy</li>
+          <li>Multilingual counseling in Telugu, Hindi &amp; English</li>
+          <li>Certificate of Achievement – MD Nutrition Centre, Hyderabad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">— Transform · Nourish · Thrive</p>
+      <h2 class="section-title">Our Signature Programs</h2>
+      <p class="section-desc">Structured programmes designed for measurable results — not generic templates.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal">
+        <div class="program-tag">Weight Loss</div>
+        <div class="program-name">Slim &amp; Strong Program</div>
+        <p class="program-desc">A step-by-step nutrition and lifestyle plan for sustainable fat loss without crash dieting.</p>
+        <ul class="program-features">
+          <li>Personalized calorie &amp; macro planning</li>
+          <li>Weekly check-ins &amp; adjustments</li>
+          <li>Indian meal templates</li>
+        </ul>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-tag">Weight Gain</div>
+        <div class="program-name">Healthy Mass Builder</div>
+        <p class="program-desc">Science-backed muscle and healthy weight gain plan for underweight individuals.</p>
+        <ul class="program-features">
+          <li>High-calorie Indian meal plans</li>
+          <li>Protein optimization strategy</li>
+          <li>Body composition tracking</li>
+        </ul>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-tag">Hormonal Health</div>
+        <div class="program-name">Hormonal Balance Reset</div>
+        <p class="program-desc">Targeted 90-day nutrition reset for PCOD, thyroid, and hormonal imbalance management.</p>
+        <ul class="program-features">
+          <li>Anti-inflammatory meal planning</li>
+          <li>PCOD &amp; thyroid-specific guidance</li>
+          <li>Lifestyle &amp; supplement coaching</li>
+        </ul>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-tag">Diabetes</div>
+        <div class="program-name">Sugar Control Nutrition Plan</div>
+        <p class="program-desc">Evidence-based dietary therapy for Type 2 Diabetes management and prevention.</p>
+        <ul class="program-features">
+          <li>Low-GI Indian meal planning</li>
+          <li>Blood sugar monitoring support</li>
+          <li>Carb management strategies</li>
+        </ul>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-tag">Lifestyle</div>
+        <div class="program-name">90-Day Best Version Challenge</div>
+        <p class="program-desc">Complete body, mind, and lifestyle transformation challenge with full coaching support.</p>
+        <ul class="program-features">
+          <li>Full nutrition + wellness roadmap</li>
+          <li>Weekly progress reviews</li>
+          <li>Community accountability</li>
+        </ul>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-tag">Skin &amp; Gut</div>
+        <div class="program-name">Glow &amp; Gut Health Program</div>
+        <p class="program-desc">Dietary intervention for digestive disorders, skin conditions, and inflammatory issues.</p>
+        <ul class="program-features">
+          <li>Gut microbiome nutrition</li>
+          <li>Anti-inflammatory food plans</li>
+          <li>Skin health diet protocol</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">— Client Stories</p>
+      <h2 class="section-title">Real Results, Real People</h2>
+      <p class="section-desc">From Guntur to Hyderabad — clients sharing their transformation journeys.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Mujeeb garu's nutrition plan helped me manage my diabetes with just food changes. My sugar levels dropped significantly in 60 days. Truly life-changing guidance.</p>
+        <div class="testi-author">
+          <div class="testi-name">P. Venkata Suresh</div>
+          <div class="testi-detail">Diabetes Management · 66 yrs · Hyderabad</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I lost 12 kg in 3 months following the personalized meal plan. The Telugu meal templates made it so easy to follow. Highly recommend MD Nutrition Centre.</p>
+        <div class="testi-author">
+          <div class="testi-name">Shaik Razina</div>
+          <div class="testi-detail">Weight Loss Program · Guntur</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">My PCOD symptoms improved dramatically after 90 days on the hormonal health program. The diet plan was practical and suited to my lifestyle. Thank you so much!</p>
+        <div class="testi-author">
+          <div class="testi-name">Uma Maheswari</div>
+          <div class="testi-detail">Hormonal Health · PCOD · Guntur</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">— Get In Touch</p>
+      <h2 class="section-title">Book Your Free Consultation</h2>
+      <p class="section-desc">Ready to start your transformation? Reach out today — first consultation is always free.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Old Guntur, Andhra Pradesh, India</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value">Available on WhatsApp</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Consultation Hours</div>
+            <div class="contact-value">Mon – Sat &nbsp;|&nbsp; 9:00 AM – 7:00 PM</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <div class="contact-label">Languages</div>
+            <div class="contact-value">Telugu · Hindi · English · Urdu</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-group"><input type="text" placeholder="Your Full Name"></div>
+        <div class="form-group"><input type="tel" placeholder="WhatsApp / Phone Number"></div>
+        <div class="form-group"><input type="text" placeholder="Your Health Goal (e.g. Weight Loss, PCOD)"></div>
+        <div class="form-group"><textarea placeholder="Tell me a bit about yourself and what you're looking to achieve..."></textarea></div>
+        <button class="form-submit">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MD Nutrition Centre</div>
+  <div class="footer-tagline">Transform · Nourish · Thrive</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 MD Nutrition Centre · Mahammed Mujeeb · Old Guntur, Andhra Pradesh</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
